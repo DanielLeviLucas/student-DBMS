@@ -1,6 +1,6 @@
 const readline = require("readline-sync");
 const chalk = require("chalk");
-const jsonReadWrite = require("jsonReadWrite");
+const jsonReadWrite = require("./jsonReadWrite.js");
 
 function createStudentData() {
   studentData = jsonReadWrite.jsonRead("student.json");
