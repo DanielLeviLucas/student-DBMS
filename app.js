@@ -29,7 +29,7 @@ process.stdout.write("\n");
 
 switch (option.toLowerCase()) {
   case "add":
-    dbCRUD.createStudentData();
+    CRUD.createStudentData();
     break;
 
   case "remove":
