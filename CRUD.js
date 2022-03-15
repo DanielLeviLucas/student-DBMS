@@ -6,11 +6,11 @@ function createStudentData() {
   studentData = jsonReadWrite.jsonRead("student.json");
 
   const studentDB = {
-    studentID,
-    firstName,
-    lastName,
-    DOB,
-    department,
+    studentID: "",
+    firstName: "",
+    lastName: "",
+    DOB: "DD-MM-YYYY",
+    department: "",
   };
 
   Object.keys(studentDB).forEach((key) => {
