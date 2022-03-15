@@ -13,12 +13,12 @@ function printMenu() {
 
   process.stdout.write(
     chalk.bgWhite.black(`
-  | Add    - To create a new user       |
-  | remove - To remove an existing user |
-  | update - To update an existing user |
-  | Show   - To show an existing users  |
+| Add    - To create a new user       |
+| remove - To remove an existing user |
+| update - To update an existing user |
+| Show   - To show an existing users  |
 
-  `)
+`)
   );
 }
 
