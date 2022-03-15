@@ -23,3 +23,31 @@ function printMenu() {
 }
 
 printMenu();
+
+let option = readline.question(chalk.white(`Enter you option : `));
+process.stdout.write("\n");
+
+switch (option.toLowerCase()) {
+  case "add":
+    dbCRUD.createStudentData();
+    break;
+
+  case "remove":
+    console.log(chalk.bgGreen.black("W.I.P\nremove an existing user"));
+    break;
+
+  case "update":
+    console.log(chalk.bgGreen.black("W.I.P\nupdate an existing user"));
+    break;
+
+  case "show":
+    console.log(chalk.bgGreen.black("W.I.P\nshow an existing user"));
+    break;
+
+  case "exit":
+    console.log(chalk.bgGreen.black("Exited from menu"));
+    process.exit();
+
+  default:
+    console.log(chalk.bgRed.white("Option invalid"));
+}
