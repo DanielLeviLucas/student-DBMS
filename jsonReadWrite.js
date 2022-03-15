@@ -14,3 +14,8 @@ function jsonWrite(obj) {
   const jsonData = JSON.stringify(obj);
   fs.writeFileSync("studentDB.json", jsonData);
 }
+
+module.exports = {
+  jsonRead: jsonRead,
+  jsonWrite: jsonWrite,
+};
