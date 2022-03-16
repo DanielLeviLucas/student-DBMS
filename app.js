@@ -35,7 +35,7 @@ while (true) {
       break;
 
     case "remove":
-      let id = readline.question(
+      const id = readline.question(
         chalk.white(`Enter studentID to remove record : `)
       );
       CRUD.removeStudentRecord(id);
