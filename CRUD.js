@@ -22,6 +22,11 @@ function createStudentData() {
   jsonReadWrite.jsonWrite(studentData);
 }
 
+function showAllStudentData() {
+  studentData = jsonReadWrite.jsonRead();
+  console.table(studentData);
+}
+
 module.exports = {
   createStudentData: createStudentData,
 };
