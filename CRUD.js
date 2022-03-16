@@ -50,6 +50,8 @@ function updateStudentData(id, key) {
     studentData[index][key] = readline.question(
       `Enter student ${key} to update : `
     );
+
+    jsonReadWrite.jsonWrite(studentData);
   } else {
     console.log(chalk.white.bgRed("No match found"));
   }
