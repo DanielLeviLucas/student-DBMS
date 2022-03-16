@@ -29,4 +29,5 @@ function showAllStudentData() {
 
 module.exports = {
   createStudentData: createStudentData,
+  showAllStudentData: showAllStudentData,
 };
