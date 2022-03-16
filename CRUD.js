@@ -32,6 +32,7 @@ function removeStudentRecord(id) {
   if (index !== -1) {
     studentData.splice(index, 1);
     console.log(chalk.bgGreen.black("Record successfully removed"));
+
     jsonReadWrite.jsonWrite(studentData);
   } else {
     console.log(chalk.white.bgRed("No match found"));
