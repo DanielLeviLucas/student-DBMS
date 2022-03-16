@@ -3,7 +3,7 @@ const chalk = require("chalk");
 const jsonReadWrite = require("./jsonReadWrite.js");
 
 function createStudentData() {
-  studentData = jsonReadWrite.jsonRead("student.json");
+  studentData = jsonReadWrite.jsonRead();
 
   const studentDB = {
     studentID: "",
