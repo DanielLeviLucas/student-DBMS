@@ -14,8 +14,8 @@ function printMenu() {
   process.stdout.write(
     chalk.bgWhite.black(`
 | Add    - To create a new user       |
-| remove - To remove an existing user |
-| update - To update an existing user |
+| Remove - To remove an existing user |
+| Update - To update an existing user |
 | Show   - To show all existing users |
 
 `)
