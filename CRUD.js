@@ -47,7 +47,9 @@ function updateStudentData(id, key) {
   });
 
   if (index !== -1) {
-    studentData[index][key] = readline.question(`Update student ${key} : `);
+    studentData[index][key] = readline.question(
+      `Enter student ${key} to update : `
+    );
   }
 }
 
