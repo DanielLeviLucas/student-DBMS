@@ -41,7 +41,8 @@ switch (option.toLowerCase()) {
     break;
 
   case "show":
-    console.log(chalk.bgGreen.black("W.I.P\nshow an existing user"));
+    console.log(chalk.black.bgGreen("Listing all records"));
+    CRUD.showAllStudentData();
     break;
 
   case "exit":
