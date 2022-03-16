@@ -22,6 +22,7 @@ function printMenu() {
 `)
   );
 }
+
 while (true) {
   printMenu();
 
