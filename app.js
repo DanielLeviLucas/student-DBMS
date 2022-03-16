@@ -33,7 +33,10 @@ switch (option.toLowerCase()) {
     break;
 
   case "remove":
-    console.log(chalk.bgGreen.black("W.I.P\nremove an existing user"));
+    let id = readline.question(
+      chalk.white(`Enter studentID to remove record : `)
+    );
+    CRUD.removeStudentRecord(id);
     break;
 
   case "update":
