@@ -16,7 +16,7 @@ function printMenu() {
 | Add    - To create a new user       |
 | remove - To remove an existing user |
 | update - To update an existing user |
-| Show   - To show an existing users  |
+| Show   - To show all existing users |
 
 `)
   );
