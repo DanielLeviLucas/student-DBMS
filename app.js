@@ -17,41 +17,43 @@ function printMenu() {
 | Remove - To remove an existing user |
 | Update - To update an existing user |
 | Show   - To show all existing users |
+| Exit   - To exit the menu           |
 
 `)
   );
 }
+while (true) {
+  printMenu();
 
-printMenu();
+  let option = readline.question(chalk.white(`Enter you option : `));
+  process.stdout.write("\n");
 
-let option = readline.question(chalk.white(`Enter you option : `));
-process.stdout.write("\n");
+  switch (option.toLowerCase()) {
+    case "add":
+      CRUD.createStudentData();
+      break;
 
-switch (option.toLowerCase()) {
-  case "add":
-    CRUD.createStudentData();
-    break;
+    case "remove":
+      let id = readline.question(
+        chalk.white(`Enter studentID to remove record : `)
+      );
+      CRUD.removeStudentRecord(id);
+      break;
 
-  case "remove":
-    let id = readline.question(
-      chalk.white(`Enter studentID to remove record : `)
-    );
-    CRUD.removeStudentRecord(id);
-    break;
+    case "update":
+      console.log(chalk.bgGreen.black("W.I.P\nupdate an existing user"));
+      break;
 
-  case "update":
-    console.log(chalk.bgGreen.black("W.I.P\nupdate an existing user"));
-    break;
+    case "show":
+      console.log(chalk.black.bgGreen("Listing all records"));
+      CRUD.showAllStudentData();
+      break;
 
-  case "show":
-    console.log(chalk.black.bgGreen("Listing all records"));
-    CRUD.showAllStudentData();
-    break;
+    case "exit":
+      console.log(chalk.bgGreen.black("Exited from menu"));
+      process.exit();
 
-  case "exit":
-    console.log(chalk.bgGreen.black("Exited from menu"));
-    process.exit();
-
-  default:
-    console.log(chalk.bgRed.white("Option invalid"));
+    default:
+      console.log(chalk.bgRed.white("Option invalid"));
+  }
 }
