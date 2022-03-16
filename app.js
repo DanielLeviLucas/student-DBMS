@@ -42,7 +42,15 @@ while (true) {
       break;
 
     case "update":
-      console.log(chalk.bgGreen.black("W.I.P\nupdate an existing user"));
+      console.log(chalk.bgGreen.black("Update an existing user"));
+      const sid = readline.question(
+        chalk.white(`Enter studentID to remove record : `)
+      );
+      const key = readline.question(
+        chalk.white(`Enter the attribute to update record : `)
+      );
+
+      CRUD.updateStudentData(sid, key);
       break;
 
     case "show":
