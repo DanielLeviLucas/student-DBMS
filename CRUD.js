@@ -19,7 +19,7 @@ function createStudentData() {
   });
   studentData.push(studentDB);
 
-  jsonReadWrite.jsonWrite(studentDB);
+  jsonReadWrite.jsonWrite(studentData);
 }
 
 module.exports = {
