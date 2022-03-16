@@ -42,7 +42,7 @@ function removeStudentRecord(id) {
 function updateStudentData(id, key) {
   studentData = jsonReadWrite.jsonRead();
 
-  const index = sutdentData.findIndex((element) => {
+  const index = studentData.findIndex((element) => {
     return element.studentID === id.toUpperCase();
   });
 
