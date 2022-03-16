@@ -29,12 +29,24 @@ function removeStudentRecord(id) {
     return element.studentID === id.toUpperCase();
   });
 
-  if (index != -1) {
+  if (index !== -1) {
     studentData.splice(index, 1);
     console.log(chalk.bgGreen.black("Record successfully removed"));
     jsonReadWrite.jsonWrite(studentData);
   } else {
     console.log(chalk.white.bgRed("No match found"));
+  }
+}
+
+function updateStudentData(id, key) {
+  studentData = jsonReadWrite.jsonRead();
+
+  const index = sutdentData.findIndex((element) => {
+    return element.studentID === id.toUpperCase();
+  });
+
+  if (index !== -1) {
+    studentData[index][key] = readline.question(`Update student ${key} : `);
   }
 }
 
@@ -47,4 +59,5 @@ module.exports = {
   createStudentData: createStudentData,
   showAllStudentData: showAllStudentData,
   removeStudentRecord: removeStudentRecord,
+  updateStudentData: updateStudentData,
 };
