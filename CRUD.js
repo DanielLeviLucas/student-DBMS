@@ -17,9 +17,22 @@ function createStudentData() {
     studentDB[key] = readline.question(chalk.white(`Enter student ${key} :`));
     process.stdout.write("\n");
   });
-  studentData.push(studentDB);
 
-  jsonReadWrite.jsonWrite(studentData);
+  const findDuplicate = studentData.find((element) => {
+    return element.studentID === studentDB.studentID;
+  });
+
+  if (!findDuplicate) {
+    studentData.push(studentDB);
+    jsonReadWrite.jsonWrite(studentData);
+
+    console.log(chalk.bgGreen.black("Record successfully added"));
+  } else {
+    console.log(
+      chalk.white.bgRed(`${studentDB.studentID} already exist in DB `)
+    );
+    console.table(findDuplicate);
+  }
 }
 
 function removeStudentRecord(id) {
