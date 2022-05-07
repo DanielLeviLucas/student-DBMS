@@ -1,15 +1,15 @@
 const readline = require("readline-sync");
 const chalk = require("chalk");
-const jsonReadWrite = require("./jsonReadWrite.js");
+const { jsonRead, jsonWrite } = require("./jsonReadWrite");
 
 function createStudentData() {
-  studentData = jsonReadWrite.jsonRead();
+  studentData = jsonRead();
 
   const studentDB = {
     studentID: "",
     firstName: "",
     lastName: "",
-    DOB: "DD-MM-YYYY",
+    DOB: "",
     department: "",
   };
 
@@ -24,7 +24,7 @@ function createStudentData() {
 
   if (!findDuplicate) {
     studentData.push(studentDB);
-    jsonReadWrite.jsonWrite(studentData);
+    jsonWrite(studentData);
 
     console.log(chalk.bgGreen.black("Record successfully added"));
   } else {
@@ -36,7 +36,7 @@ function createStudentData() {
 }
 
 function removeStudentRecord(id) {
-  studentData = jsonReadWrite.jsonRead();
+  studentData = jsonRead();
 
   const index = studentData.findIndex((element) => {
     return element.studentID === id.toUpperCase();
@@ -46,32 +46,34 @@ function removeStudentRecord(id) {
     studentData.splice(index, 1);
     console.log(chalk.bgGreen.black("Record successfully removed"));
 
-    jsonReadWrite.jsonWrite(studentData);
+    jsonWrite(studentData);
   } else {
     console.log(chalk.white.bgRed("No match found"));
   }
 }
 
 function updateStudentData(id, key) {
-  studentData = jsonReadWrite.jsonRead();
+  studentData = jsonRead();
 
   const index = studentData.findIndex((element) => {
     return element.studentID === id.toUpperCase();
   });
+
+  key = key.toLowerCase();
 
   if (index !== -1) {
     studentData[index][key] = readline.question(
       `Enter student ${key} to update : `
     );
 
-    jsonReadWrite.jsonWrite(studentData);
+    jsonWrite(studentData);
   } else {
     console.log(chalk.white.bgRed("No match found"));
   }
 }
 
 function showAllStudentData() {
-  studentData = jsonReadWrite.jsonRead();
+  studentData = jsonRead();
   console.table(studentData);
 }
 
