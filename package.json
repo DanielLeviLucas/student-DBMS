@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "chalk": "^2.4.1",
     "readline-sync": "^1.4.10"
