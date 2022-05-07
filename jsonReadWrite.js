@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-function jsonRead() {
+exports.jsonRead = () => {
   try {
     const dataBuffer = fs.readFileSync("studentDB.json");
     const jsonData = dataBuffer.toString();
@@ -8,14 +8,9 @@ function jsonRead() {
   } catch (error) {
     return [];
   }
-}
+};
 
-function jsonWrite(obj) {
+exports.jsonWrite = (obj) => {
   const jsonData = JSON.stringify(obj);
   fs.writeFileSync("studentDB.json", jsonData);
-}
-
-module.exports = {
-  jsonRead: jsonRead,
-  jsonWrite: jsonWrite,
 };
